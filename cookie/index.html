@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+        <head>
+                <meta charset="utf-8">
+                <script type="text/javascript" name="MainClick">
+                        var clicks = 1;
+                        var cookVal = 1;
+                        var timer = 1000;
+                        var balCost = 10
+                        var valCost = 10;
+                        var ltimeCost = 500;
+                        var autoBal = 0;
+                        function plusbal1() {
+                          clicks += cookVal;
+                          document.getElementById('clickss').innerHTML =
+                          "You have " + clicks + " cookies. The value of your cookies is " + cookVal + ". You have " + autoBal + " autoclickers. The timer (in ms) is " + timer;
+                          document.getElementById('title').innerHTML =
+                          clicks + " clicks. - CookClick";
+                        }
+                        function startBal1() {
+                          if (clicks > balCost-1) {
+                            clicks -= balCost;
+                            balCost *= 2;
+                            autoBal += 1;
+                            plusautobal1();
+                          }
+                        }
+                        function getVal() {
+                          if (clicks > valCost-1) {
+                            clicks -= valCost;
+                            valCost *= 2;
+                            plusval1();
+                          }
+                        }
+                        function lesstime() {
+                          if (clicks > ltimeCost-1) {
+                            clicks -= ltimeCost;
+                            ltimeCost *= 2;
+                            timer -= 0.25;
+                            document.getElementById('ltime').innerHTML = 
+                            "-0.25 Auto Cookie Timer - "+ltimeCost+" Cookies";
+                          }
+                        }
+                        function plusval1() {
+                          cookVal += 1;
+                          document.getElementById('clickss').innerHTML =
+                          "You have " + clicks + " cookies. The value of your cookies is " + cookVal + ". You have " + autoBal + " autoclickers. The timer (in ms) is " + timer;
+                          document.getElementById('title').innerHTML =
+                          clicks + " clicks. - CookClick";
+                          document.getElementById('valButton').innerHTML = 
+                          "+1 Cookie Value - "+valCost+" Cookies";
+                        }
+                        function plusautobal1() {
+                          clicks += cookVal;
+                          document.getElementById('clickss').innerHTML =
+                          "You have " + clicks + " cookies. The value of your cookies is " + cookVal + ". You have " + autoBal + " autoclickers. The timer (in ms) is " + timer;
+                          document.getElementById('title').innerHTML =
+                          clicks + " clicks. - CookClick";
+                          document.getElementById('autoCookies').innerHTML = 
+                          "+1 Auto Cookies - "+balCost+" Cookies";
+                          var t = setTimeout(plusautobal1, timer);
+                        }
+                </script>
+                <title id="title">CookClick</title>
+                <link rel="icon" type="image/gif" href="./cookie.png">
+                <meta name="description" content="Simple HTML, JS Cookie clicker"> 
+                <meta name="keywords" content="cookie, clicker, cookieclicker">
+                <meta name="author" content="jased_0001">
+        </head>
+        <body>
+        <style>
+                .itall { 
+                        text-align:center;
+                }
+                .button {
+                        background-color: #4CAF50; /* Green */
+                        border: none;
+                        color: white;
+                        text-align: center;
+                        text-decoration: none;
+                        display: inline-block;
+                        font-size: 16px;
+                        padding: 14px 40px;
+                }
+        </style>
+        <div id="itall" class="itall">
+                <p id="clickss">Click the cookie! Some data on your bakery will show up here!</p>
+                <img src="./cookie.png" width="90" height="90" onclick="plusbal1()">
+                <p></p>
+                <div>
+                        <button onClick="getVal()" class="button" id="valButton">+1 Cookie Value -10 Cookies</button>
+                        <button onclick="startBal1()" class="button" id="autoCookies">+1 Auto Cookies -10 Cookies</button>
+                        <br>
+                        <p></p>
+                        <button onclick="lesstime()" class="button" id="ltime">-0.25 Auto Cookie Timer -500 Cookies</button>
+                        <noscript>Please enable javascript</noscript>
+                </div>
+        </div>
+        </body>
+</html>
