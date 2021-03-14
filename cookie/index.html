@@ -9,8 +9,7 @@
                         var balCost = 10
                         var valCost = 10;
                         var ltimeCost = 500;
-                    var autoBal = 0;
-                    var cookieused = 0;
+                        var autoBal = 0;
                         function plusbal1() {
                           clicks += cookVal;
                           document.getElementById('clickss').innerHTML =
@@ -32,7 +31,7 @@
                             valCost *= 2;
                             plusval1();
                           }
-                    }
+                        }
                         function lesstime() {
                           if (clicks > ltimeCost-1) {
                             clicks -= ltimeCost;
@@ -43,8 +42,8 @@
                               document.getElementById('vcost').innerHTML = 
                             "-0.25 Auto Cookie Timer - "+ltimeCost+" Cookies";
                           }
-                    }
-                    function plusval1() {
+                        }
+                        function plusval1() {
                           cookVal += 1;
                           document.getElementById('clickss').innerHTML =
                           "You have " + clicks + " cookies. The value of your cookies is " + cookVal + ". You have " + autoBal + " autoclickers. The timer (in ms) is " + timer;
@@ -62,10 +61,16 @@
                           document.getElementById('autoCookies').innerHTML = 
                           "+1 Auto Cookies - "+balCost+" Cookies";
                           var t = setTimeout(plusautobal1, timer);
-                    }
-                    function save() {
-                        document.cookie = "clicks="+clicks;
-                    }
+                        }
+                        function save() {
+                          document.cookie = "clicks=" + clicks + "expires=Thu, 31 Dec 9999 12:00:00 EST";
+                          document.cookie = "value=" + cookVal;
+                          document.cookie = "timer=" + timer;
+                          document.cookie = "balCost=" + balCost;
+                          document.cookie = "valCost=" + valCost;
+                          document.cookie = "ltimeCost=" + ltimeCost;
+                          document.cookie = "autoBal=" + autoBal;
+                        }
                 </script>
                 <title id="title">CookClick</title>
                 <link rel="icon" type="image/gif" href="./cookie.png">
