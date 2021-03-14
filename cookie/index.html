@@ -63,7 +63,7 @@
                           var t = setTimeout(plusautobal1, timer);
                         }
                         function save() {
-                          document.cookie = "clicks=" + clicks; "expires=Thu, 31 Dec 9999 12:00:00 EST";
+                          document.cookie = "clicks=" + clicks;
                           document.cookie = "value=" + cookVal;
                           document.cookie = "timer=" + timer;
                           document.cookie = "balCost=" + balCost;
@@ -71,6 +71,9 @@
                           document.cookie = "ltimeCost=" + ltimeCost;
                           document.cookie = "autoBal=" + autoBal;
                         }
+                    function load() {
+                        clicks = document.cookie("clicks");
+                    }
                 </script>
                 <title id="title">CookClick</title>
                 <link rel="icon" type="image/gif" href="./cookie.png">
@@ -78,7 +81,7 @@
                 <meta name="keywords" content="cookie, clicker, cookieclicker">
                 <meta name="author" content="jased_0001">
         </head>
-        <body>
+        <body onload="load()">
         <style>
                 .itall { 
                         text-align: center;
