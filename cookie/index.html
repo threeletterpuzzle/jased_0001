@@ -3,13 +3,14 @@
         <head>
                 <meta charset="utf-8">
                 <script type="text/javascript" name="MainClick">
-                        var clicks = 1;
+                        var clicks = 0;
                         var cookVal = 1;
                         var timer = 1000;
                         var balCost = 10
                         var valCost = 10;
                         var ltimeCost = 500;
-                        var autoBal = 0;
+                    var autoBal = 0;
+                    var cookieused = 0;
                         function plusbal1() {
                           clicks += cookVal;
                           document.getElementById('clickss').innerHTML =
@@ -31,17 +32,19 @@
                             valCost *= 2;
                             plusval1();
                           }
-                        }
+                    }
                         function lesstime() {
                           if (clicks > ltimeCost-1) {
                             clicks -= ltimeCost;
                             ltimeCost *= 2;
-                            timer -= 0.25;
-                            document.getElementById('ltime').innerHTML = 
+                              timer -= 0.25;
+                              document.getElementById('clickss').innerHTML =
+                                  "You have " + clicks + " cookies. The value of your cookies is " + cookVal + ". You have " + autoBal + " autoclickers. The timer (in ms) is " + timer;
+                              document.getElementById('vcost').innerHTML = 
                             "-0.25 Auto Cookie Timer - "+ltimeCost+" Cookies";
                           }
-                        }
-                        function plusval1() {
+                    }
+                    function plusval1() {
                           cookVal += 1;
                           document.getElementById('clickss').innerHTML =
                           "You have " + clicks + " cookies. The value of your cookies is " + cookVal + ". You have " + autoBal + " autoclickers. The timer (in ms) is " + timer;
@@ -59,7 +62,16 @@
                           document.getElementById('autoCookies').innerHTML = 
                           "+1 Auto Cookies - "+balCost+" Cookies";
                           var t = setTimeout(plusautobal1, timer);
-                        }
+                    }
+                    function save() {
+                        document.cookie = clicks;
+                        document.cookie = cookVal;
+                        document.cookie = timer;
+                        document.cookie = balCost;
+                        document.cookie = valCost;
+                        document.cookie = balCost;
+                        document.cookie = ltimeCost;
+                    }
                 </script>
                 <title id="title">CookClick</title>
                 <link rel="icon" type="image/gif" href="./cookie.png">
@@ -67,7 +79,7 @@
                 <meta name="keywords" content="cookie, clicker, cookieclicker">
                 <meta name="author" content="jased_0001">
         </head>
-        <body>
+        <body onload="goldcookie()">
         <style>
                 .itall { 
                         text-align: center;
@@ -80,7 +92,7 @@
                         text-decoration: none;
                         display: inline-block;
                         font-size: 16px;
-                        padding: 14px 40px;
+                        padding: 14px 40px;document.cookie = "username=John Doe";
                 }
             .copy {
                 position: absolute;
@@ -100,10 +112,13 @@
                         <br>
                         <p></p>
                         <button onclick="lesstime()" class="button" id="ltime">-0.25 Auto Cookie Timer -500 Cookies</button>
+                        <br />
+                        <p></p>
+                        <button onclick="save()" class="button">Save (NOT FULLY DONE!!)</button>
                         <noscript>Please enable javascript</noscript>
                 </div>
                 <div>
-                    <p class="copy">jased_0001 (c) 2021</p>
+                    <p class="copy">jased_0001 (c) 2021 - CookClick V1.01</p>
                 </div>
         </div>
         </body>
