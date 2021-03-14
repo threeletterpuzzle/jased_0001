@@ -64,7 +64,8 @@
                           var t = setTimeout(plusautobal1, timer);
                     }
                     function save() {
-                        createCookie(clicks);
+                        document.cookie = cookie;
+                        createCookie("clickss", clicks);
                     }
                 </script>
                 <title id="title">CookClick</title>
