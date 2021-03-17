@@ -1,15 +1,28 @@
 ﻿<!doctype html>
+<!--feel free to download/edit this code to what you want-->
+<!--TO-DO:
+for 1.10:
+more style
+background art
+it working on mobile.. gosh it is small lol
+-->
 <html>
         <head>
                 <meta charset="utf-8">
                 <script type="text/javascript" name="MainClick">
+                        //console stuff
+                        var discord = "Jased#0001";
+                        var discordserver = "https://discord.gg/tMR9JZQCeU";
+                        var error = "No errors are present. If there are, contact me on discord:\nJased#0001";
+                        //real code
                         var clicks = 0;
                         var cookVal = 1;
-                        var timer = 1000;
+                        var timer = 1000; //1 second (until user buys the upgrade)
                         var balCost = 10
                         var valCost = 10;
                         var ltimeCost = 500;
                         var autoBal = 0;
+                        var timesval = 1.3;
                         function plusbal1() {
                           clicks += cookVal;
                           document.getElementById('clickss').innerHTML =
@@ -20,7 +33,7 @@
                         function startBal1() {
                           if (clicks > balCost-1) {
                             clicks -= balCost;
-                            balCost *= 2;
+                            balCost *= timesval;
                             autoBal += 1;
                             plusautobal1();
                           }
@@ -28,18 +41,18 @@
                         function getVal() {
                           if (clicks > valCost-1) {
                             clicks -= valCost;
-                            valCost *= 2;
+                            valCost *= timesval;
                             plusval1();
                           }
                         }
                         function lesstime() {
                           if (clicks > ltimeCost-1) {
                             clicks -= ltimeCost;
-                            ltimeCost *= 2;
+                            ltimeCost *= timesval;
                               timer -= 0.25;
                               document.getElementById('clickss').innerHTML =
                                   "You have " + clicks + " cookies. The value of your cookies is " + cookVal + ". You have " + autoBal + " autoclickers. The timer (in ms) is " + timer;
-                              document.getElementById('vcost').innerHTML = 
+                              document.getElementById('ltime').innerHTML = 
                             "-0.25 Auto Cookie Timer - "+ltimeCost+" Cookies";
                           }
                         }
@@ -62,6 +75,19 @@
                           "+1 Auto Cookies - "+balCost+" Cookies";
                           var t = setTimeout(plusautobal1, timer);
                         }
+                        function check() {
+                          clicks = Math.round(clicks)
+                          cookVal = Math.round(cookVal)
+                          balCost = Math.round(balCost)
+                          valCost = Math.round(valCost)
+                          ltimeCost = Math.round(ltimeCost)
+                          autoBal = Math.round(autoBal)
+                          document.getElementById('title').innerHTML = clicks + " clicks. - CookClick";
+                          document.getElementById('ltime').innerHTML = "-0.25 Auto Cookie Timer - "+ltimeCost+" Cookies";
+                          document.getElementById('valButton').innerHTML = "+1 Cookie Value - "+valCost+" Cookies";
+                          document.getElementById('autoCookies').innerHTML = "+1 Auto Cookies - "+balCost+" Cookies";
+                          var t = setTimeout(check, 250); //.25 seconds
+                        }
                         function save() {
                           document.cookie = "clicks=" + clicks;
                           document.cookie = "value=" + cookVal;
@@ -71,11 +97,13 @@
                           document.cookie = "ltimeCost=" + ltimeCost;
                           document.cookie = "autoBal=" + autoBal;
                         }
-                    function load() {
-                    }
+                        function load() {
+                          check();
+                          console.log("<-- Welcome to the console! -->\nIf there is an error, try running the 'error' command!\nFor contact info, run the 'discord' command!\nTo join my discord, do the 'discordserver' command!");
+                        }
                 </script>
                 <title id="title">CookClick</title>
-                <link rel="icon" type="image/gif" href="./cookie.png">
+                <link rel="icon" type="image/gif" href="https://threeletterpuzzle.github.io/jased_0001/cookie/cookie.png">
                 <meta name="description" content="Simple HTML, JS Cookie clicker"> 
                 <meta name="keywords" content="cookie, clicker, cookieclicker">
                 <meta name="author" content="jased_0001">
@@ -86,26 +114,26 @@
                         text-align: center;
                 }
                 .button {
-                        background-color: #4CAF50; /* Green */
+                        background-color: #0d862e; /* Green */
                         border: none;
-                        color: white;
+                        text-decoration: #000000; /* wont change for some reason :/ */
                         text-align: center;
                         text-decoration: none;
                         display: inline-block;
                         font-size: 16px;
                         padding: 14px 40px;
                 }
-            .copy {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                text-align: center;
-            }
+                .copy {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        text-align: center;
+                }
         </style>
         <div id="itall" class="itall">
                 <p id="clickss">Click the cookie! Some data on your bakery will show up here!</p>
-                <img src="./cookie.png" width="90" height="90" onclick="plusbal1()">
+                <img src="https://threeletterpuzzle.github.io/jased_0001/cookie/cookie.png" width="90" height="90" onclick="plusbal1()">
                 <p></p>
                 <div>
                         <button onClick="getVal()" class="button" id="valButton">+1 Cookie Value -10 Cookies</button>
@@ -116,10 +144,10 @@
                         <br />
                         <p></p>
                         <button onclick="save()" class="button">Save (NOT FULLY DONE!!)</button>
-                        <noscript>Please enable javascript</noscript>
                 </div>
+                <p>The buttons or your amount of cookies may flicker.<br /> This is caused by it taking .25 seconds to round and fix the decimals in values.</p>
                 <div>
-                    <p class="copy">jased_0001 (c) 2021 - CookClick V1.01</p>
+                    <p class="copy">jased_0001 (c) 2021 - CookClick V1.02</p>
                 </div>
         </div>
         </body>
