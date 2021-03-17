@@ -100,7 +100,13 @@ it working on mobile.. gosh it is small lol
                         function load() {
                           check();
                           console.log("<-- Welcome to the console! -->\nIf there is an error, try running the 'error' command!\nFor contact info, run the 'discord' command!\nTo join my discord, do the 'discordserver' command!");
-                          console.log("Save data not ready BUT clicks are " + getCookie("clicks"));
+                          clicks = getCookie("clicks");
+                          cookVal = getCookie("value");
+                          timer = getCookie("timer");
+                          balCost = getCookie("balCost");
+                          valCost = getCookie("valCost");
+                          ltimeCost = getCookie("ltimeCost");
+                          autoBal = getCookie("autoBal");
                         }
                         function getCookie(c_name) {
                           var i,x,y,ARRcookies=document.cookie.split(";");
