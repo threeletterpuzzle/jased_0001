@@ -95,7 +95,6 @@ it working on mobile.. gosh it is small lol
                           document.cookie = "balCost=" + balCost;
                           document.cookie = "valCost=" + valCost;
                           document.cookie = "ltimeCost=" + ltimeCost;
-                          document.cookie = "autoBal=" + autoBal;
                         }
                         function load() {
                           check();
@@ -106,7 +105,10 @@ it working on mobile.. gosh it is small lol
                           balCost = getCookie("balCost");
                           valCost = getCookie("valCost");
                           ltimeCost = getCookie("ltimeCost");
-                          autoBal = getCookie("autoBal");
+                          document.getElementById('title').innerHTML = clicks + " clicks. - CookClick";
+                          document.getElementById('ltime').innerHTML = "-0.25 Auto Cookie Timer - "+ltimeCost+" Cookies";
+                          document.getElementById('valButton').innerHTML = "+1 Cookie Value - "+valCost+" Cookies";
+                          document.getElementById('autoCookies').innerHTML = "+1 Auto Cookies - "+balCost+" Cookies";
                         }
                         function getCookie(c_name) {
                           var i,x,y,ARRcookies=document.cookie.split(";");
@@ -162,7 +164,7 @@ it working on mobile.. gosh it is small lol
                         <button onclick="lesstime()" class="button" id="ltime">-0.25 Auto Cookie Timer -500 Cookies</button>
                         <br />
                         <p></p>
-                        <button onclick="save()" class="button">Save (NOT FULLY DONE!!)</button>
+                        <button onclick="save()" class="button">Save</button>
                 </div>
                 <p>The buttons or your amount of cookies may flicker.<br /> This is caused by it taking .25 seconds to round and fix the decimals in values.</p>
                 <div>
