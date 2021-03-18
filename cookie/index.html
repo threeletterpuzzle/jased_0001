@@ -109,7 +109,8 @@ it working on mobile.. gosh it is small lol
                           document.getElementById('autoCookies').innerHTML = "+1 Auto Cookies - "+balCost+" Cookies";
                         }
                         function getCookie(c_name) {
-                          if (c_name == NaN) {
+                          if (c_name == "NaN") {
+                            console.log("NaN value return")
                             clicks = 0;
                             cookVal = 1;
                             timer = 1000; //1 second (until user buys the upgrade)
