@@ -98,6 +98,8 @@ it working on mobile.. gosh it is small lol
                         function load() {
                           check();
                           console.log("<-- Welcome to the console! -->\nIf there is an error, try running the 'error' command!\nFor contact info, run the 'discord' command!\nTo join my discord, do the 'discordserver' command!");
+                        }
+                        function loadsave() {
                           clicks = getCookie("clicks");
                           cookVal = getCookie("value");
                           timer = getCookie("timer");
@@ -109,26 +111,17 @@ it working on mobile.. gosh it is small lol
                           document.getElementById('autoCookies').innerHTML = "+1 Auto Cookies - "+balCost+" Cookies";
                         }
                         function getCookie(c_name) {
-                          if (c_name == null) {
-                            console.log("NaN value return")
-                            clicks = 0;
-                            cookVal = 1;
-                            timer = 1000; //1 second (until user buys the upgrade)
-                            valCost = 10;
-                            ltimeCost = 500;
-                          } else {
-                            var i,x,y,ARRcookies=document.cookie.split(";");
+                          var i,x,y,ARRcookies=document.cookie.split(";");
 
-                            for (i=0;i<ARRcookies.length;i++) {
-                              x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
-                              y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
-                              x=x.replace(/^\s+|\s+$/g,"");
-                              if (x==c_name) {
-                                return unescape(y);
-                              }
+                          for (i=0;i<ARRcookies.length;i++) {
+                            x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
+                            y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
+                            x=x.replace(/^\s+|\s+$/g,"");
+                            if (x==c_name) {
+                              return unescape(y);
                             }
                           }
-                        }
+                        }     
                 </script>
                 <title id="title">CookClick</title>
                 <link rel="icon" type="image/gif" href="https://threeletterpuzzle.github.io/jased_0001/cookie/cookie.png">
@@ -172,6 +165,7 @@ it working on mobile.. gosh it is small lol
                         <br />
                         <p></p>
                         <button onclick="save()" class="button">Save</button>
+                        <button onclick="loadsave()" class="button">Load</button>
                 </div>
                 <p>The buttons or your amount of cookies may flicker.<br /> This is caused by it taking .25 seconds to round and fix the decimals in values.</p>
                 <div>
