@@ -109,14 +109,18 @@ it working on mobile.. gosh it is small lol
                           document.getElementById('autoCookies').innerHTML = "+1 Auto Cookies - "+balCost+" Cookies";
                         }
                         function getCookie(c_name) {
-                          var i,x,y,ARRcookies=document.cookie.split(";");
+                          if (c_name == NaN) {
 
-                          for (i=0;i<ARRcookies.length;i++) {
-                            x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
-                            y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
-                            x=x.replace(/^\s+|\s+$/g,"");
-                            if (x==c_name) {
-                              return unescape(y);
+                          } else {
+                            var i,x,y,ARRcookies=document.cookie.split(";");
+
+                            for (i=0;i<ARRcookies.length;i++) {
+                              x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
+                              y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
+                              x=x.replace(/^\s+|\s+$/g,"");
+                              if (x==c_name) {
+                                return unescape(y);
+                              }
                             }
                           }
                         }
