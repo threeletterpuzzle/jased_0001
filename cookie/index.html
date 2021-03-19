@@ -1,10 +1,15 @@
 ﻿<!doctype html>
-<!--feel free to download/edit this code to what you want-->
+<!--feel free to download/edit this code to what you want, just give me credit to rehost-->
 <!--TO-DO:
-for 1.10:
-more style
-background art
-it working on mobile.. gosh it is small lol
+for 1.11:
+get workin on the easter eggs lol, it is getting close to easter
+MORE STYLE (
+  button outlines
+  (maybe cookie anims)
+)
+bug fixes (
+  negative timer
+)
 -->
 <html>
         <head>
@@ -121,7 +126,7 @@ it working on mobile.. gosh it is small lol
                               return unescape(y);
                             }
                           }
-                        }     
+                        }  
                 </script>
                 <title id="title">CookClick</title>
                 <link rel="icon" type="image/gif" href="https://threeletterpuzzle.github.io/jased_0001/cookie/cookie.png">
@@ -133,16 +138,17 @@ it working on mobile.. gosh it is small lol
         <style>
                 .itall { 
                         text-align: center;
+                        color: #aaa9a9;
                 }
                 .button {
-                        background-color: #0d862e; /* Green */
-                        border: none;
-                        text-decoration: #000000; /* wont change for some reason :/ */
+                        background-color: #0d862e;
+                        border: #333131;
+                        color: #1b1818;
                         text-align: center;
                         text-decoration: none;
                         display: inline-block;
                         font-size: 16px;
-                        padding: 14px 40px;
+                        padding: 12px 38px;
                 }
                 .copy {
                         position: absolute;
@@ -150,6 +156,13 @@ it working on mobile.. gosh it is small lol
                         left: 0;
                         width: 100%;
                         text-align: center;
+                        color: #aaa9a9;
+                }
+                body {
+                  background-image: url("./bg.png");
+                  background-repeat: no-repeat;
+                  background-color: #040404;
+                  background-position: center;
                 }
         </style>
         <div id="itall" class="itall">
@@ -159,7 +172,7 @@ it working on mobile.. gosh it is small lol
                 <div>
                         <button onClick="getVal()" class="button" id="valButton">+1 Cookie Value -10 Cookies</button>
                         <button onclick="startBal1()" class="button" id="autoCookies">+1 Auto Cookies -10 Cookies</button>
-                        <br>
+                        <br />
                         <p></p>
                         <button onclick="lesstime()" class="button" id="ltime">-0.25 Auto Cookie Timer -500 Cookies</button>
                         <br />
@@ -169,7 +182,7 @@ it working on mobile.. gosh it is small lol
                 </div>
                 <p>The buttons or your amount of cookies may flicker.<br /> This is caused by it taking .25 seconds to round and fix the decimals in values.</p>
                 <div>
-                    <p class="copy">jased_0001 (c) 2021 - CookClick V1.02</p>
+                    <p class="copy">jased_0001 (c) 2021 - CookClick V1.10</p>
                 </div>
         </div>
         </body>
