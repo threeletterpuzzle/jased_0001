@@ -123,7 +123,3 @@ function getCookie(c_name) {
     }
   }
 }
-function download() {
-    alert("This button does not feature offline ability.");
-    window.location.href='www.example.com'
-}
