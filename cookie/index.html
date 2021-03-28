@@ -1,133 +1,16 @@
 ﻿<!doctype html>
 <!--feel free to download/edit this code to what you want, just give me credit to rehost-->
 <!--TO-DO:
-for 1.11:
-get workin on the easter eggs lol, it is getting close to easter
-MORE STYLE (
-  button outlines
-  (maybe cookie anims)
-)
-bug fixes (
-  negative timer
-)
+for 1.12:
+re-enable the auto cookie button feature
+add branch pages
+better 404.html
 -->
 <html>
         <head>
                 <meta charset="utf-8">
-                <script type="text/javascript" name="MainClick">
-                        //console stuff
-                        var discord = "Jased#0001";
-                        var discordserver = "https://discord.gg/tMR9JZQCeU";
-                        var error = "No errors are present. If there are, contact me on discord:\nJased#0001";
-                        //real code
-                        var clicks = 0;
-                        var cookVal = 1;
-                        var timer = 1000; //1 second (until user buys the upgrade)
-                        var balCost = 10
-                        var valCost = 10;
-                        var ltimeCost = 500;
-                        var autoBal = 0;
-                        var timesval = 1.3;
-                        function plusbal1() {
-                          clicks += cookVal;
-                          document.getElementById('clickss').innerHTML =
-                          "You have " + clicks + " cookies. The value of your cookies is " + cookVal + ". You have " + autoBal + " autoclickers. The timer (in ms) is " + timer;
-                          document.getElementById('title').innerHTML =
-                          clicks + " clicks. - CookClick";
-                        }
-                        function startBal1() {
-                          if (clicks > balCost-1) {
-                            clicks -= balCost;
-                            balCost *= timesval;
-                            autoBal += 1;
-                            plusautobal1();
-                          }
-                        }
-                        function getVal() {
-                          if (clicks > valCost-1) {
-                            clicks -= valCost;
-                            valCost *= timesval;
-                            plusval1();
-                          }
-                        }
-                        function lesstime() {
-                          if (clicks > ltimeCost-1) {
-                            clicks -= ltimeCost;
-                            ltimeCost *= timesval;
-                              timer -= 0.25;
-                              document.getElementById('clickss').innerHTML =
-                                  "You have " + clicks + " cookies. The value of your cookies is " + cookVal + ". You have " + autoBal + " autoclickers. The timer (in ms) is " + timer;
-                              document.getElementById('ltime').innerHTML = 
-                            "-0.25 Auto Cookie Timer - "+ltimeCost+" Cookies";
-                          }
-                        }
-                        function plusval1() {
-                          cookVal += 1;
-                          document.getElementById('clickss').innerHTML =
-                          "You have " + clicks + " cookies. The value of your cookies is " + cookVal + ". You have " + autoBal + " autoclickers. The timer (in ms) is " + timer;
-                          document.getElementById('title').innerHTML =
-                          clicks + " clicks. - CookClick";
-                          document.getElementById('valButton').innerHTML = 
-                          "+1 Cookie Value - "+valCost+" Cookies";
-                        }
-                        function plusautobal1() {
-                          clicks += cookVal;
-                          document.getElementById('clickss').innerHTML =
-                          "You have " + clicks + " cookies. The value of your cookies is " + cookVal + ". You have " + autoBal + " autoclickers. The timer (in ms) is " + timer;
-                          document.getElementById('title').innerHTML =
-                          clicks + " clicks. - CookClick";
-                          document.getElementById('autoCookies').innerHTML = 
-                          "+1 Auto Cookies - "+balCost+" Cookies";
-                          var t = setTimeout(plusautobal1, timer);
-                        }
-                        function check() {
-                          clicks = Math.round(clicks)
-                          cookVal = Math.round(cookVal)
-                          balCost = Math.round(balCost)
-                          valCost = Math.round(valCost)
-                          ltimeCost = Math.round(ltimeCost)
-                          autoBal = Math.round(autoBal)
-                          document.getElementById('title').innerHTML = clicks + " clicks. - CookClick";
-                          document.getElementById('ltime').innerHTML = "-0.25 Auto Cookie Timer - "+ltimeCost+" Cookies";
-                          document.getElementById('valButton').innerHTML = "+1 Cookie Value - "+valCost+" Cookies";
-                          document.getElementById('autoCookies').innerHTML = "+1 Auto Cookies - "+balCost+" Cookies";
-                          var t = setTimeout(check, 250); //.25 seconds
-                        }
-                        function save() {
-                          document.cookie = "clicks=" + clicks;
-                          document.cookie = "value=" + cookVal;
-                          document.cookie = "timer=" + timer;
-                          document.cookie = "valCost=" + valCost;
-                          document.cookie = "ltimeCost=" + ltimeCost;
-                        }
-                        function load() {
-                          check();
-                          console.log("<-- Welcome to the console! -->\nIf there is an error, try running the 'error' command!\nFor contact info, run the 'discord' command!\nTo join my discord, do the 'discordserver' command!");
-                        }
-                        function loadsave() {
-                          clicks = getCookie("clicks");
-                          cookVal = getCookie("value");
-                          timer = getCookie("timer");
-                          valCost = getCookie("valCost");
-                          ltimeCost = getCookie("ltimeCost");
-                          document.getElementById('title').innerHTML = clicks + " clicks. - CookClick";
-                          document.getElementById('ltime').innerHTML = "-0.25 Auto Cookie Timer - "+ltimeCost+" Cookies";
-                          document.getElementById('valButton').innerHTML = "+1 Cookie Value - "+valCost+" Cookies";
-                          document.getElementById('autoCookies').innerHTML = "+1 Auto Cookies - "+balCost+" Cookies";
-                        }
-                        function getCookie(c_name) {
-                          var i,x,y,ARRcookies=document.cookie.split(";");
-
-                          for (i=0;i<ARRcookies.length;i++) {
-                            x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
-                            y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
-                            x=x.replace(/^\s+|\s+$/g,"");
-                            if (x==c_name) {
-                              return unescape(y);
-                            }
-                          }
-                        }  
-                </script>
+                <link rel="stylesheet" type="text/css" href="https://threeletterpuzzle.github.io/jased_0001/cookie/main.css" media="screen"/>
+                <script type="text/javascript" name="MainClick" src="https://threeletterpuzzle.github.io/jased_0001/cookie/main.js"></script>
                 <title id="title">CookClick</title>
                 <link rel="icon" type="image/gif" href="https://threeletterpuzzle.github.io/jased_0001/cookie/cookie.png">
                 <meta name="description" content="Simple HTML, JS Cookie clicker"> 
@@ -135,36 +18,6 @@ bug fixes (
                 <meta name="author" content="jased_0001">
         </head>
         <body onload="load()">
-        <style>
-                .itall { 
-                        text-align: center;
-                        color: #aaa9a9;
-                }
-                .button {
-                        background-color: #0d862e;
-                        border: #333131;
-                        color: #1b1818;
-                        text-align: center;
-                        text-decoration: none;
-                        display: inline-block;
-                        font-size: 16px;
-                        padding: 12px 38px;
-                }
-                .copy {
-                        position: absolute;
-                        bottom: 0;
-                        left: 0;
-                        width: 100%;
-                        text-align: center;
-                        color: #aaa9a9;
-                }
-                body {
-                  background-image: url("./bg.png");
-                  background-repeat: no-repeat;
-                  background-color: #040404;
-                  background-position: center;
-                }
-        </style>
         <div id="itall" class="itall">
                 <p id="clickss">Click the cookie! Some data on your bakery will show up here!</p>
                 <img src="https://threeletterpuzzle.github.io/jased_0001/cookie/cookie.png" width="90" height="90" onclick="plusbal1()">
@@ -182,8 +35,9 @@ bug fixes (
                 </div>
                 <p>The buttons or your amount of cookies may flicker.<br /> This is caused by it taking .25 seconds to round and fix the decimals in values.</p>
                 <div>
-                    <p class="copy">jased_0001 (c) 2021 - CookClick V1.10</p>
+                    <p class="copy">jased_0001 (c) 2021 - CookClick V1.11-1</p>
                 </div>
         </div>
+        <div id="noscript"><noscript>Please turn on JavaScript on your browser<br>This game runs on about 125 lines of JavaScript, you might need it.</noscript></div>
         </body>
 </html>

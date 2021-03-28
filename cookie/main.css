@@ -1,0 +1,43 @@
+.itall { 
+    text-align: center;
+    color: #aaa9a9;
+}
+.button {
+    background-color: #0d862e;
+    border: 1px solid #000000; /* Green */
+    color: #1b1818;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    padding: 12px 38px;
+}
+.buttonDisabled {
+    background-color: #191d1a;
+    border: 1px solid #FFFFFF; /* Green */
+    cursor: not-allowed;
+    color: #b6b6b6;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    padding: 12px 38px;
+}
+.copy {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #aaa9a9;
+}
+body {
+    background-image: url("./bg.png");
+    background-repeat: no-repeat;
+    background-color: #040404;
+    background-position: center;
+}
+.noscript {
+    text-align: center;
+    color: #e01c1c;
+}
