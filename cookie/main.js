@@ -90,11 +90,11 @@ function check() {
   var t = setTimeout(check, 250); //.25 seconds
 }
 function save() {
-  document.cookie = "clicks=" + clicks;
-  document.cookie = "value=" + cookVal;
-  document.cookie = "timer=" + timer;
-  document.cookie = "valCost=" + valCost;
-  document.cookie = "ltimeCost=" + ltimeCost;
+  document.cookie = "clicks=" + clicks + "; expires=Mon, 1 Jan 2022 12:00:00 UTC; path=/";
+  document.cookie = "value=" + cookVal + "; expires=Mon, 1 Jan 2022 12:00:00 UTC; path=/";
+  document.cookie = "timer=" + timer + "; expires=Mon, 1 Jan 2022 12:00:00 UTC; path=/";
+  document.cookie = "valCost=" + valCost + "; expires=Mon, 1 Jan 2022 12:00:00 UTC; path=/";
+  document.cookie = "ltimeCost=" + ltimeCost + "; expires=Mon, 1 Jan 2022 12:00:00 UTC; path=/";
 }
 function load() {
   check();
