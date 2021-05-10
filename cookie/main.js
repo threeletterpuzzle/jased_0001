@@ -73,12 +73,12 @@ function plusautobal1() {
   var t = setTimeout(plusautobal1, timer);
 }
 function check() {
-  clicks = Math.round(clicks)
-  cookVal = Math.round(cookVal)
-  balCost = Math.round(balCost)
-  valCost = Math.round(valCost)
-  ltimeCost = Math.round(ltimeCost)
-  autoBal = Math.round(autoBal)
+  clicks = Math.round(clicks);
+  cookVal = Math.round(cookVal);
+  balCost = Math.round(balCost);
+  valCost = Math.round(valCost);
+  ltimeCost = Math.round(ltimeCost);
+  autoBal = Math.round(autoBal);
   document.getElementById('title').innerHTML = clicks + " clicks. - CookClick";
   document.getElementById('ltime').innerHTML = "-0.25 Auto Cookie Timer - "+ltimeCost+" Cookies";
   document.getElementById('valButton').innerHTML = "+1 Cookie Value - "+valCost+" Cookies";
@@ -90,11 +90,11 @@ function check() {
   var t = setTimeout(check, 250); //.25 seconds
 }
 function save() {
-  document.cookie = "clicks=" + clicks + "; expires=Mon, 1 Jan 2022 12:00:00 UTC; path=/";
-  document.cookie = "value=" + cookVal + "; expires=Mon, 1 Jan 2022 12:00:00 UTC; path=/";
-  document.cookie = "timer=" + timer + "; expires=Mon, 1 Jan 2022 12:00:00 UTC; path=/";
-  document.cookie = "valCost=" + valCost + "; expires=Mon, 1 Jan 2022 12:00:00 UTC; path=/";
-  document.cookie = "ltimeCost=" + ltimeCost + "; expires=Mon, 1 Jan 2022 12:00:00 UTC; path=/";
+  document.cookie = "clicks=" + clicks + "; expires=Fri, 1 Jan 9999 12:00:00 UTC; path=/";
+  document.cookie = "value=" + cookVal + "; expires=Fri, 1 Jan 9999 12:00:00 UTC; path=/";
+  document.cookie = "timer=" + timer + "; expires=Fri, 1 Jan 9999 12:00:00 UTC; path=/";
+  document.cookie = "valCost=" + valCost + "; expires=Fri, 1 Jan 9999 12:00:00 UTC; path=/";
+  document.cookie = "ltimeCost=" + ltimeCost + "; expires=Fri, 1 Jan 9999 12:00:00 UTC; path=/";
 }
 function load() {
   check();
